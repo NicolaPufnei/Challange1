@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+:root{
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+}
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+header{
+    /*border: 2px solid magenta;*/
+}
+/* Typografy */
+.widget-right h1{
+    color:var(--Soft-orange);
+    margin-bottom:2rem;
+}
+.widget-right p{
+    color:var(--Grayish-blue);
+    margin-bottom:1rem;
+}
+.title{
+    width: 40%;
+    margin-top:0;
+    font-size: 1.5rem;
+}
+.textwthbtn{
+    width: 60%;
+}
+.textwthbtn p{
+    color:var(--Dark-grayish-blue);
+    margin-right:.5rem;
+    margin-top:0.3rem;
+}
+
+/* Functionality */
+nav{
+    padding: 2rem 0;
+    /*border: 2px solid magenta;*/
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    display:flex;
+}
+.nav-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap:2rem;
+}
+a{
+    text-decoration: none;
+    color:var(--Dark-grayish-blue);
+}
+a:hover{
+    color:var(--Soft-orange);
+    transition:color 0.25s ease-in;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+}
+.hamburger{
+    z-index:99;
+    position: relative;
+    cursor:pointer;
+    width: 35px;
+
+    appearance: none;
+    border:none;
+    background: none;
+    display:none;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before{
+    content: '';
+    display:none;
+    width: 100%;
+    height:3px;
+    background-color: black;
+    margin: 4px 0px;
+    transition: 0.4s;
+}
+.hamburger.is-active::before{
+    transform: rotate(-45deg) translate(-1px, 3px);
+}
+.hamburger.is-active::after{
+    transform: rotate(45deg) translate(-1px, -5px);
+}
+.hamburger.is-active .bar{
+    display: none;
+}
+.mobile-nav{
+    position:fixed;
+    display: block;
+    width: 55%;
+    right:-100%;
+    top:0;
+    min-height:100vh;
+    z-index:98;
+    background-color: var(--Off-white);
+    padding-top:120px;
+    transition: 0.4s;
+}
+.mobile-nav.is-active{
+    right:0;
+}
+.mobile-nav a{
+    display: block;
+    margin: 2rem;
+    color:var(--Very-dark-blue);
+}
+.container{
+    /*border:2px solid magenta;*/
+    display:flex;
+    margin: 0 auto;
+    width: 80%;
+    gap:1.5rem;
+    align-items: flex-start;
+}
+.widget-right{
+    padding:1.5rem 1rem;
+    background-color: var(--Very-dark-blue);
+    color:var(--Off-white);
+    /*border:2px solid magenta;*/
+}
+.sub-main-content{
+    display:flex;
+    padding-top:1rem;
+    gap:5rem;
+}
+.textwthbtn button{
+    margin-top:2.5rem;
+    background-color:var(--Soft-red);
+    padding:0.75rem 1.5rem;
+    color:var(--Off-white);
+    font-weight: 600;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.article1{
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+    margin-bottom:0.5rem;
+}
+.article2{
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+    margin-bottom: 0.5rem;
+}
+.container2{
+    width: 80%;
+    margin: 3rem auto;
+    display: flex;
+    gap:1rem;
+}
+.container2 img{
+    max-width: 90px;
+    width: 100%;
+}
+.news1{
+    display:flex;
+    gap:1rem;
+}
+.news2{
+    display:flex;
+    gap:1rem;
+}
+.news3{
+    display:flex;
+    gap:1rem;
+}
+.container2 h1{
+    color:var(--Grayish-blue);
+    margin-bottom:0.5rem;
+}
+.container2 p{
+    margin-top:0.5rem;
+    font-weight: 500;
+    color:var(--Dark-grayish-blue);
+}
+@media (max-width:1200px){
+    .hamburger{
+        display:block;
+    }
+    .hamburger .bar, .hamburger::after, .hamburger::before{
+        display: block;
+    }
+    .container{
+        width: 90%;
+        flex-direction: column;
+    }
+    .title{
+        width: 100%;
+    }
+    .textwthbtn{
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .sub-main-content{
+        flex-direction: column;
+        padding-top:0;
+        gap:0.5rem;
+    }
+    .textwthbtn p{
+        margin-top:0;
+    }
+    .container2{
+        flex-direction: column;
+        width: 90%;
+        gap:2rem;
+    }
+    nav{
+        width: 90%;
+    }
+    .nav-list{
+        display:none;
+    }
+    .container img{
+        height: 300px;
+        object-fit: cover;
+    }
+}
