@@ -14,6 +14,7 @@
     font-family: 'Inter', sans-serif;
 }
 header{
+    z-index:95;
     /*border: 2px solid magenta;*/
 }
 /* Typografy */
@@ -95,6 +96,16 @@ img{
 }
 .hamburger.is-active .bar{
     display: none;
+}
+.blur.is-active{
+    position:fixed;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    top:0;
+    z-index:97;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: 0.4s ease-in-out;
 }
 .mobile-nav{
     position:fixed;
